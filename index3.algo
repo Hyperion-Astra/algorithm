@@ -1,0 +1,23 @@
+ALGORITHM weather
+VAR
+    season: INTEGER;
+BEGIN
+    Read(season);
+
+    SWITCH (season) DO
+        case 1 : 
+            Write("Winter"); 
+            BREAK;
+        case 2 : 
+            Write("Autum"); 
+            BREAK;
+        case 3 : 
+            Write("Fall"); 
+            BREAK;
+        case 4 : 
+            Write("Summer"); 
+            BREAK;
+        default : 
+            Write("Season not found") // optional use of BREAK;
+    END_SWITCH
+END

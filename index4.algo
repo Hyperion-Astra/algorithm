@@ -1,0 +1,44 @@
+ALGORITHM traverse_array
+VAR
+    tab : ARRAY_OF INTEGER[5]; // declaring the array and define its length.
+    i : INTEGER; // declaring the index for each element in the array.
+BEGIN
+    tab := {1,2,3,5,7,8}; // inserting the elements directly in the array.
+    Write('Print Array :')
+
+    //Untrusted version 
+    FOR i FROM 0 TO 5 STEP 1 DO   // the index of arrays start from 0;
+        Write(tab[i]) // to access the element, we use the name_array[indexation]
+    END_FOR
+
+    // Trusted version
+    FOR i FROM 0 TO tab.length-1 STEP 1  DO
+        Write(tab[i])
+    END_FOR
+END
+
+
+ALGORITHM insertion_array
+VAR
+    tab : ARRAY_OF INTEGER[3];
+    i, j, pos, elt : INTEGER;
+BEGIN
+    FOR i FROM 0 TO tab.length-1 DO
+        Read(tab[i]);// insert from user {2, 6, 8}
+    END_FOR
+
+    Write("give the element to insert");
+    Read(elt);
+
+    Write("give the position to insert in array");
+    Read(pos);
+    
+    j := tab.length;
+    WHILE (j >= pos) DO
+        tab[j+1] := tab[j]; // translation from left to right
+        j := j-1; // update index
+    END_WHILE
+
+    tab[pos] := elt;
+    // remember the tab.length is increased by 1.
+END

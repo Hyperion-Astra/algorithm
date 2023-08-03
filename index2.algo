@@ -1,0 +1,15 @@
+ALGORITHM ticketing
+VAR
+    ticket_price : INTEGER := 20;
+    age : INTEGER;
+BEGIN
+    Read(age)
+
+    IF (age <=16) THEN
+        ticket_price = ticket_price / 2;
+    ELSE_IF(age >= 50) THEN
+        ticket_price = ticket_price / 1.25;
+    ELSE
+        ticket_price = 20
+    END_IF
+END
